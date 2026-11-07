@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Item Sharing - aplikasi sederhana untuk berbagi dan meminjam barang.">
+  <title>Item Sharing | Berbagi Lebih Mudah</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Item Sharing beranda">
+      <span class="brand-icon">IS</span>
+      <span>item<span class="brand-accent">sharing</span></span>
+    </a>
+    <span class="topbar-note">Community sharing platform</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">BERBAGI • MEMINJAM • TERHUBUNG</p>
+        <h1>Barang yang kamu punya,<br><span>bisa bermanfaat untuk semua.</span></h1>
+        <p class="hero-description">Temukan barang yang kamu butuhkan atau tawarkan barang yang sedang tidak digunakan. Mulai berbagi dengan komunitasmu.</p>
+        <a class="hero-link" href="#form-section">Mulai tambahkan barang <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-circle circle-one"></div>
+        <div class="art-circle circle-two"></div>
+        <div class="art-card card-back">📚</div>
+        <div class="art-card card-front">📷</div>
+        <div class="art-tag">Share more<br><strong>Buy less.</strong></div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Ringkasan barang">
+      <div class="stat-card"><span class="stat-number" id="total-items">0</span><span class="stat-label">Total barang</span></div>
+      <div class="stat-card"><span class="stat-number" id="available-items">0</span><span class="stat-label">Tersedia</span></div>
+      <div class="stat-card"><span class="stat-number" id="borrowed-items">0</span><span class="stat-label">Dipinjam</span></div>
+    </section>
+
+    <section class="content-grid">
+      <section class="panel form-panel" id="form-section">
+        <div class="section-heading">
+          <div><p class="eyebrow">TAMBAHKAN BARANG</p><h2>Bagikan barangmu</h2></div>
+          <span class="heading-icon">＋</span>
+        </div>
+        <p class="muted">Isi informasi berikut. Barang yang ditambahkan akan langsung muncul pada daftar.</p>
+        <form id="item-form">
+          <label for="owner">Nama pengguna</label>
+          <input id="owner" name="owner" type="text" placeholder="Contoh: Daniel" maxlength="50" required>
+
+          <label for="item-name">Nama barang</label>
+          <input id="item-name" name="itemName" type="text" placeholder="Contoh: Kamera DSLR" maxlength="70" required>
+
+          <label for="category">Kategori</label>
+          <select id="category" name="category" required>
+            <option value="">Pilih kategori</option>
+            <option>Elektronik</option>
+            <option>Buku & Pendidikan</option>
+            <option>Peralatan Rumah</option>
+            <option>Olahraga</option>
+            <option>Lainnya</option>
+          </select>
+
+          <label for="status">Status barang</label>
+          <select id="status" name="status" required>
+            <option value="Available">Available — Tersedia</option>
+            <option value="Offered">Offered — Ditawarkan</option>
+            <option value="Borrowed">Borrowed — Sedang dipinjam</option>
+          </select>
+
+          <button class="primary-button" type="submit">＋ Tambahkan barang</button>
+          <p class="form-message" id="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section class="panel list-panel">
+        <div class="section-heading list-heading">
+          <div><p class="eyebrow">JELAJAHI KOMUNITAS</p><h2>Daftar barang</h2></div>
+          <span class="item-count" id="item-count">0 barang</span>
+        </div>
+        <div class="toolbar">
+          <input id="search" type="search" placeholder="Cari nama barang atau pemilik..." aria-label="Cari barang">
+          <select id="filter-status" aria-label="Filter status">
+            <option value="all">Semua status</option>
+            <option value="Available">Available</option>
+            <option value="Offered">Offered</option>
+            <option value="Borrowed">Borrowed</option>
+          </select>
+        </div>
+        <div id="item-list" class="item-list" aria-live="polite"></div>
+        <div id="empty-state" class="empty-state">
+          <div class="empty-icon">📦</div>
+          <h3>Belum ada barang</h3>
+          <p>Jadilah yang pertama membagikan barang di komunitas ini.</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="how-it-works">
+      <p class="eyebrow">CARA KERJA</p>
+      <h2>Berbagi jadi lebih sederhana</h2>
+      <div class="steps">
+        <article><span>01</span><h3>Tambahkan barang</h3><p>Masukkan nama pengguna, barang, kategori, dan statusnya.</p></article>
+        <article><span>02</span><h3>Temukan barang</h3><p>Gunakan pencarian dan filter untuk melihat barang yang tersedia.</p></article>
+        <article><span>03</span><h3>Mulai berbagi</h3><p>Hubungi pemilik barang melalui informasi yang tersedia di komunitasmu.</p></article>
+      </div>
+    </section>
+
+    <footer><span>© 2026 Item Sharing Application</span><span>Dibuat untuk proyek pembelajaran Web Application</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
